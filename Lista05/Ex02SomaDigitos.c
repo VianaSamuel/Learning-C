@@ -7,8 +7,8 @@ Faça um programa principal que leia um número, acione a função e exiba o res
 
 int somaDigitos(int n) {
 
-  if (n != 0) return; 
-  else return n += somaDigitos(n/10);
+  if (n < 10) return n;
+  else return n = somaDigitos(n/10) + n % 10;
 
   return n;
   
@@ -21,6 +21,7 @@ int main(void) {
   scanf("%d", &num);
 
   int resultado = somaDigitos(num);
+  
   printf("\nA soma dos dígitos de %d resulta em %d.", num, resultado);
   
   return 0;
