@@ -9,7 +9,7 @@ exiba o resultado gerado.
 int contaDigitos(int n) {
 
   if (n < 10) return 1;
-  else return 1 + contaDigitos(n/10);
+  else return contaDigitos(n/10) + 1;
   
 }
 
