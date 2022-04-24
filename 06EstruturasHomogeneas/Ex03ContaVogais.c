@@ -6,7 +6,7 @@ quantidade de vogais na frase. Lembre-se de contar tanto mai√∫sculas quanto min√
 
 #include <stdio.h>
 #include <string.h>
-#define TAM_MAX 101
+#define TAM_MAX 255
 
 int contaVogais(char txt[]) {
   int vogais = 0, i = 0;
