@@ -8,12 +8,14 @@ diagonal principal também.
 
 int main(void) {
   int m[4][4];
-  
+
+  printf("\nMatriz:\n\n");
   int i = 0, j = 0;
   while (j < 4) {
     if (i < 4) {
       for (i; i < 4; i++) {
         m[i][j] = i + 1;
+        printf("Linha %d Coluna %d: %d\n", i, j, m[i][j]);
       }
     }
     else {
