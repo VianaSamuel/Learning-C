@@ -11,6 +11,10 @@ cada letra abaixo):
 
 #include <stdio.h>
 
+void linha(){
+  printf("\n-------------------\n");
+}
+
 int a(int matriz[5][5]){
   int i = 0, soma = 0;
 
@@ -70,7 +74,9 @@ int e(int matriz[5][5]){
 int main(void) {
   int M[5][5];
 
-  printf("\nMatriz:\n\n");
+  linha();
+  printf("Matriz:");
+  linha();
   int i = 0, j = 0;
   while (j < 5) {
     if (i < 5) {

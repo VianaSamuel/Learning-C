@@ -7,6 +7,10 @@ valor dos seus índices no vetor.
 #include <stdio.h>
 #define TAM_MAX 50
 
+void linha(){
+  printf("\n-------------------\n");
+}
+
 int main(void) {
   int n, i, j, v[TAM_MAX];
   printf("\nDigite -999 para interromper. Máximo de 50 valores.\n");
@@ -18,8 +22,10 @@ int main(void) {
     v[i] = n;
   }
 
-  printf("\nNúmeros pares:");
-  printf("\nValor\tÍndice\n");
+  linha();
+  printf("Números pares:");
+  linha();
+  printf("Valor\t\tÍndice\n");
   
   for (j = 0; j < i; j++) {
     if (v[j] % 2 == 0)

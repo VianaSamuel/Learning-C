@@ -6,10 +6,16 @@ diagonal principal também.
 
 #include <stdio.h>
 
+void linha(){
+  printf("\n-------------------\n");
+}
+
 int main(void) {
   int m[4][4];
 
-  printf("\nMatriz:\n\n");
+  linha();
+  printf("Matriz:");
+  linha();
   int i = 0, j = 0;
   while (j < 4) {
     if (i < 4) {

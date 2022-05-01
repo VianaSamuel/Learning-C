@@ -14,9 +14,9 @@ int main(void) {
   int n, i, j, maior, c1, soma, c2, somainv, v1[TAM_MAX], v2[TAM_MAX];
   printf("\nDigite -999 para interromper. Máximo de 100 valores.\n");
 
-  printf("\n-------------------");
+  printf("\n--------------------");
   printf("\nPRIMEIRA SEQUÊNCIA:");
-  printf("\n-------------------");
+  printf("\n--------------------");
   for (i = 0; i < TAM_MAX; i++){
     printf("\nDigite um valor:\n");
     scanf("%d", &n);
@@ -24,9 +24,9 @@ int main(void) {
     v1[i] = n;
   }
 
-  printf("\n------------------");
+  printf("\n-------------------");
   printf("\nSEGUNDA SEQUÊNCIA:");
-  printf("\n------------------");
+  printf("\n-------------------");
   for (j = 0; j < TAM_MAX; j++){
     printf("\nDigite um valor:\n");
     scanf("%d", &n);
