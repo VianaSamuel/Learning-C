@@ -54,12 +54,13 @@ int controla_b = 0;
 
 char **lista_por_incial(char **lista, char letra,  int num_linhas){
   int i, tamanho;
-  char **resultado;
+  char **resultado = NULL;
 
   for (i = 0; i < num_linhas; i++){
     if (*(*(lista + i) + 0) == letra){
       tamanho = strlen(*(lista + i));
-      *resultado = malloc(tamanho * sizeof(char));
+      resultado = realloc(resultado, controla_b * sizeof(char));
+      *(resultado + controla_b) = malloc(tamanho * sizeof(char));
       strcpy(*(resultado + controla_b), *(lista + i));
       controla_b++;
     }
@@ -108,11 +109,12 @@ int main(void) {
   scanf(" %c", &inicial);
   char **retorno = lista_por_incial(meus_pokemons, inicial, qntd_linhas);
   if (controla_b != 0){
-    printf("\nLista de pokemóns que começam com a inicial %c:", inicial);
+    printf("\nLista de pokemóns que começam com a inicial '%c':", inicial);
     for (i = 0; i < controla_b; i++)
       printf("\nPokemón: %s", retorno[i]);
   }
-  else printf("\nNão foi encontrado nenhum pokemón com a inicial digitada!");
+  else
+   printf("\nNão foi encontrado nenhum pokemón com a inicial '%c'!", inicial);
   
   for (linha = 0; linha < qntd_linhas; linha++){
     free(meus_pokemons[linha]);
