@@ -17,11 +17,11 @@ os compromissos daquele mês (do ano corrente).
 #define LIM 999
 
 void linha(){
-  printf("\n---------------------------------\n");
+  printf("---------------------------------\n");
 }
 
-void linhamaior(){
-  printf("---------------------------------------------------\n");
+void linhabrk(){
+  printf("\n---------------------------------\n");
 }
 
 struct datas{
@@ -46,48 +46,57 @@ int main(void) {
   struct compromissos c[LIM];
   int i, num_compromissos;
   while (1){
-    linha();
+    linhabrk();
     printf("Escolha uma opção:");
-    linha();
+    linhabrk();
     printf("1. Registrar compromisso");
     printf("\n2. Listar todos os compromissos");
     printf("\n3. Listar compromissos de um mês");
-    linha();
+    linhabrk();
     int opcao;
     scanf("%d", &opcao);
 
     if (opcao == 1){
       printf("\nDigite o número de compromissos a serem registrados:\n");
       scanf("%d", &num_compromissos);
-      printf("\n");
       for (i = 0; i < num_compromissos; i++){
-        linhamaior();
-        printf("Compromisso %d:\n", i+1);
-        linhamaior();
+        printf("\n\nCompromisso %d:\n", i+1);
+        linha();
         printf("Data (dd/mm/aaaa): ");
         scanf("%d/%d/%d", &c[i].c_data.dia, &c[i].c_data.mes, &c[i].c_data.ano);
         printf("Horário (hh:mm:ss): ");
         scanf("%d:%d:%d", &c[i].c_hora.horas, &c[i].c_hora.minutos, &c[i].c_hora.segundos);
         printf("Compromisso (1 palavra): ");
         scanf("%101s", c[i].compromisso);
-        linhamaior();
       }
     }
 
     if (opcao == 2){
-      printf("\nListagem de compromissos:");
       for (i = 0; i < num_compromissos; i++){
+        printf("\n\nCompromisso %d:\n", i+1);
         linha();
-        printf("Compromisso %d:", i+1);
-        linha();
-        printf("\nData: %d/%d/%d", c[i].c_data.dia, c[i].c_data.mes, c[i].c_data.ano);
+        printf("Data: %d/%d/%d", c[i].c_data.dia, c[i].c_data.mes, c[i].c_data.ano);
         printf("\nHorário: %d:%d:%d", c[i].c_hora.horas, c[i].c_hora.minutos, c[i].c_hora.segundos);
-        printf("\nCompromisso: %s", c[i].compromisso);
+        printf("\nCompromisso: %s\n", c[i].compromisso);
         }
     }
 
     if (opcao == 3){
-
+      int mes, correspondencia = 0;
+      printf("\nDigite o mês desejado:\n");
+      scanf("%d", &mes);
+      for (i = 0; i < 12; i++){
+        if (c[i].c_data.mes == mes){
+          correspondencia = 1;
+          printf("\n\nCompromisso encontrado!\n");
+          linha();
+          printf("Data: %d/%d/%d", c[i].c_data.dia, c[i].c_data.mes, c[i].c_data.ano);
+          printf("\nHorário: %d:%d:%d", c[i].c_hora.horas, c[i].c_hora.minutos, c[i].c_hora.segundos);
+          printf("\nCompromisso: %s\n", c[i].compromisso);
+        }
+      }
+      if (correspondencia == 0)
+        printf("\nNenhum compromisso no mês %d foi registrado.", mes);
     }
   }
   
