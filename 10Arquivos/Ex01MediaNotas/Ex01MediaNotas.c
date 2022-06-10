@@ -15,7 +15,7 @@ typedef struct cadastro_ {
   char sobrenome[50];
   int matricula;
   int nota[4];
-} cadastro;//
+} cadastro;
 
 int main(void) {
   cadastro c[5];
