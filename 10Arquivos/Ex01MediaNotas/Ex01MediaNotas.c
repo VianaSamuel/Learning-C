@@ -9,7 +9,6 @@ e as médias.
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define MAX_LINHA 99
 
 typedef struct cadastro_ {
   char nome[50];
@@ -20,7 +19,6 @@ typedef struct cadastro_ {
 
 int main(void) {
   cadastro c[5];
-  char linha[MAX_LINHA];
   int i, j;
 
   FILE *pAlunos = fopen("alunos.txt", "r");
