@@ -20,13 +20,17 @@ int main(void) {
   char resp;
   scanf(" %c", &resp);
 
-  int calc = (atual - nasc);
+  int calc;
 
-  if (resp == 's')
-    printf("\nVocê tem %i anos.", calc);
+  if (resp == 's' || resp == 'S'){
+    calc = (atual - nasc);
+  }
 
-  if (resp == 'n')
-    printf("\nVocê tem %i anos.", calc--);
+  if (resp == 'n' || resp == 'N'){
+    calc = (atual - nasc) - 1;
+  }
+
+  printf("\nVocê tem %i anos.", calc);
 
   if (calc >= 18)
    printf("\nVocê pode tirar a Carteira Nacional de Habilitação.");
